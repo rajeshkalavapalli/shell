@@ -3,7 +3,7 @@ ID=$(id -u)
 
 TIMESTAMP=$(date +%F-%H-%M-%S)
 
-if [ $id -ne 0 ]
+if [ $ID -n ]
    then 
    echo "error :: your not a route user"
    else 
