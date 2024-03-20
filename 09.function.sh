@@ -2,7 +2,7 @@
 
 ID=$(id -u)
 #echo "scriptname:$0"
-TIMESTAMP=$(date+%F-%H-%M-%s)
+TIMESTAMP=$(date +%F-%H-%M-%s)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
 VALIDATE(){
