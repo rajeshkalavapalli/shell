@@ -15,16 +15,16 @@ N="\e[0m"
 VALIDATE(){
     if [ $1 -ne 0 ]
      then 
-     echo -e "Error::$2 ... $R faild $N"
+     echo -e "Error::$2 ... ${R} faild ${N}"
      exit 1
     else 
-     echo -e "$2 .......$G sucess $N"
+     echo -e "$2 .......${G}sucess ${N}"
     fi 
 }
 
     if [ $ID -ne 0 ]
     then 
-    echo "error :: $R your not a root user $N"
+    echo "error :: ${R} your not a root user ${N}"
     exit 1 
     else 
     echo "your a root user"
