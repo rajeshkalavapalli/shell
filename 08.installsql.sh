@@ -13,12 +13,24 @@ fi
 
 yum update -y 
 
-yum install -y mysqlll 
+yum install -y mysql
 
 if [ $? -ne 0 ]
 then 
 
-echo "Error:: not succes "
+echo "Error:: not  installed mysql "
 else 
-echo " installation sucess"
+echo " mysql installation sucess"
+fi 
+
+yum update -y 
+
+yum install -y git  
+
+if [ $? -ne 0 ]
+then 
+
+echo "Error:: not installed git  "
+else 
+echo " installation git sucess"
 fi 
