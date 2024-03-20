@@ -5,6 +5,8 @@ echo "script name :$0"
 
 TIMESTAMP=$(date +%F-%H-%M-%S)
 
+LOGFILE="/tmp/$0-$TIMESTAMP.log/"
+
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
@@ -24,10 +26,10 @@ if [ $ID -ne 0 ]
     echo "you're a root user"
 fi  
 
-yum install mysql -y
+yum install mysql -y & >> LOGFILE
 
 VALIDATE $? "installed mysql"
 
-yum install git  -y 
+yum install git  -y & >> LOGFILE
 
 VALIDATE $? "installed git"
