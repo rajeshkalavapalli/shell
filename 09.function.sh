@@ -26,10 +26,10 @@ VALIDATE(){
     echo "your a root user"
     fi
 
-yum install -y mysql & >> $LOGFILE
+yum install -y mysql & >> $LOGFILE 2>&1
 
-VALIDATE $? "installing mysql"
+VALIDATE $? "installing mysql" 
 
-yum install -y git & >> $LOGFILE
+yum install -y git & >> $LOGFILE 2>&1
 
 VALIDATE $? "installing git"
