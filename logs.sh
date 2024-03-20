@@ -26,10 +26,10 @@ if [ $ID -ne 0 ]
     echo "you're a root user"
 fi  
 
-yum install mysql -y  >> "$LOGFILE" 2>&1
+yum install mysql -y  >> $LOGFILE 2>&1
 
 VALIDATE $? "installed mysql"
 
-yum install git  -y >> "$LOGFILE" 2>&1
+yum install git  -y >> $LOGFILE 2>&1
 
 VALIDATE  $? "installed git"
