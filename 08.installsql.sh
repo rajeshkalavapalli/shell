@@ -13,7 +13,7 @@ fi
 
 yum update -y 
 
-yum install -y mysql 
+yum install -y mysqlll 
 
 if [ $? -ne 0 ]
 then 
