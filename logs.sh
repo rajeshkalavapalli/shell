@@ -3,6 +3,8 @@ ID=$(id -u)
 
 echo "script name :$0"
 
+TIMESTAMP=$(date +%F-%H-%M-%S)
+
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
