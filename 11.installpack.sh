@@ -9,9 +9,9 @@ N="\e[0m"
 TIMESTAMP=$(date +%F-%H-%M-%S)
 
 if [ $ID -eq 0 ]; then 
-    echo "$G you're a root user $N"
+    echo "${G} you're a root user ${N}"
 else 
-    echo "$R error :: you're not a root user $N"
+    echo "${R} error :: you're not a root user ${N}"
 fi
 
 echo "all arguments passed: $@"
