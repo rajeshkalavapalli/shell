@@ -30,7 +30,7 @@ if [  $? -ne 0  ]; then  #if not installed
   VALIDATE $? "installation of $PACKAGE"
 
 else 
-   echo "$PACKAGE allready installed ...${Y}skipping${N}
+   echo "$PACKAGE allready installed ...${Y}skipping${N}"
 
 fi
 done 
