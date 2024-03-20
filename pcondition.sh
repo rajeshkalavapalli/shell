@@ -10,12 +10,21 @@ if [ $ID -ne 0 ]
     echo "you're a root user"
 fi  
 
-yum install mysqlll2 -y 
+yum install mysql -y 
 
 if [ $? -ne 0 ]
   then
     echo "Error:: mysql installation faild"
     exit 1
   else 
-     echo "installation succes"
+     echo "mysql installation succes"
+fi   
+yum install git -y 
+
+if [ $? -ne 0 ]
+  then
+    echo "Error:: git installation faild"
+    exit 1
+  else 
+     echo "git installation succes"
 fi   
