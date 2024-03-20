@@ -1,42 +1,47 @@
-#!/bin/bash 
+#!/bin/bash
 
-ID=$(id -u) #get the id 
-
+ID=$(id -u)
 R="\e[31m"
 G="\e[32m"
-N="\e[0m"
 Y="\e[33m"
+N="\e[0m"
 
-VALIDATE (){
-    if [ $1 -ne 0 ];
-    then 
-        echo "$2 ${R}filed${N}"  # Change: "filed" to "failed"
-        exit 1
-    else 
-        echo "$2 ${G}sucess ${N}"  # Change: "sucess" to "success"
+TIMESTAMP=$(date +%F-%H-%M-%S)
+LOGFILE="/tmp/$0-$TIMESTAMP.log"
+
+echo "script stareted executing at $TIMESTAMP" &>> $LOGFILE
+
+VALIDATE(){
+    if [ $1 -ne 0 ]
+    then
+        echo -e "$2 ... $R FAILED $N"
+    else
+        echo -e "$2 ... $G SUCCESS $N"
     fi
 }
 
-TIMESTAMP=$(date +%F-%H-%M-%S)
+if [ $ID -ne 0 ]
+then
+    echo -e "$R ERROR:: Please run this script with root access $N"
+    exit 1 # you can give other than 0
+else
+    echo "You are root user"
+fi # fi means reverse of if, indicating condition end
 
-if [ $ID -eq 0 ]; then 
-    echo -e "${G} you're a root user ${N}"  # Change: "you're" to "You're"
-else 
-    echo -e "${R} error :: you're not a root user ${N}"  # Change: "you're" to "You're"
-fi
+#echo "All arguments passed: $@"
+# git mysql postfix net-tools
+# package=git for first time
 
-#echo "all arguments passed: $@"
-for PACKAGE in "$@";do
-yum list installed "$PACKAGE"
-if [  $? -ne 0  ];then 
-  yum install "$PACKAGE" -y 
-  VALIDATE $? "installation of $PACKAGE"
-
-else 
-   echo "$PACKAGE allready installed ...${Y}skipping${N}"
-
-fi
+for package in $@
+do
+    yum list installed $package &>> $LOGFILE #check installed or not
+    if [ $? -ne 0 ] #if not installed
+    then
+        yum install $package -y &>> $LOGFILE # install the package
+        VALIDATE $? "Installation of $package" # validate
+    else
+        echo -e "$package is already installed ... $Y SKIPPING $N"
+    fi
 done
- 
 
    
