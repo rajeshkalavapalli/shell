@@ -1,8 +1,11 @@
 #!/bin/bash 
 
-if [ $1 -ge 100 ]
-then
-   echo "you'r good at matchs "
-else
-   echo "you'r not  good at match"
-fi
+ID=$(id -u)
+
+if [ $ID -ne 0 ]
+  then 
+    echo "Error :: please run this  script with root user" 
+  else
+    echo "you're a root user"
+fi  
+
