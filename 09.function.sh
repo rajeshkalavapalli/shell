@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 ID=$(id -u)
-#echo "scriptname:$0"
+
 TIMESTAMP=$(date +%F-%H-%M-%S) 
 
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
@@ -13,28 +13,23 @@ N="\e[0m"
 
 
 VALIDATE(){
-    if [ $1 -ne 0 ]
-     then 
-     echo -e "Error::$2 ... ${R}faild${N}"
-     
-     exit 1
+    if [ $1 -ne 0 ]; then 
+        echo -e "Error::$2 ... ${R}failed${N}"
+        exit 1
     else 
-     echo -e "$2 .......${G}sucess ${N}"
+        echo -e "$2 .......${G}success${N}"
     fi 
 }
 
-    if [ $ID -ne 0 ]
-    then 
-    echo "error :: ${R} your not a root user ${N}"
+if [ $ID -ne 0 ]; then 
+    echo -e "error :: ${R}your not a root user${N}"
     exit 1 
-    else 
+else 
     echo "your a root user"
-    fi
+fi
 
-yum install -y mysql  >> "$LOGFILE" 2>&1
-
+yum install -y mysql >> "$LOGFILE" 2>&1
 VALIDATE $? "installing mysql" 
 
 yum install -y git >> "$LOGFILE" 2>&1
-
 VALIDATE $? "installing git"
