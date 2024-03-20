@@ -1,7 +1,10 @@
 #!/bin/bash 
 
 ID=$(id -u)
-echo "scriptname:$0"
+#echo "scriptname:$0"
+TIMESTAMP=$(date+%F-%H-%M-%s)
+LOGFILE="/tmp/$0-$TIMESTAMP.log"
+
 VALIDATE(){
     if [ $1 -ne 0 ]
      then 
@@ -12,13 +15,13 @@ VALIDATE(){
     fi 
 }
 
-if [ $ID -ne 0 ]
-then 
-echo "error :: your not a root user"
-exit 1 
-else 
-echo "your a root user"
-fi
+    if [ $ID -ne 0 ]
+    then 
+    echo "error :: your not a root user"
+    exit 1 
+    else 
+    echo "your a root user"
+    fi
 
 yum install -y mysql 
 
