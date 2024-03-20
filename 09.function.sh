@@ -24,7 +24,7 @@ VALIDATE(){
 
     if [ $ID -ne 0 ]
     then 
-    echo "error :: your not a root user"
+    echo "error :: $R your not a root user $N"
     exit 1 
     else 
     echo "your a root user"
