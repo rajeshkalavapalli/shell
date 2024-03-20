@@ -1,7 +1,7 @@
 #!/bin/bash 
 ID=$(id -u)
 
-FUNCTION(){
+VALIDATE(){
     if [ $? -ne 0 ]
     then
         echo "Error:: mysql installation faild"
