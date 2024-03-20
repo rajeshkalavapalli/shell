@@ -25,7 +25,7 @@ VALIDATE(){
 
 if [ $ID -ne 0 ]
   then 
-    echo "Error :: please run this  script with root user" 
+    echo -e "${R}Error :: please run this  script with root user ${N}" 
     exit 1
   else
     echo "you're a root user"
