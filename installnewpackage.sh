@@ -41,4 +41,5 @@ do
     echo -e "$PACKAGE is already installed ......${Y}Skiping${N}"
     fi
 done 
+echo "Script execution completed" >> "$LOGFILE"
 
