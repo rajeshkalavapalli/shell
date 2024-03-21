@@ -9,7 +9,7 @@ N="\e[0m"
 TIMESTAMP=$(date +%F-%H-%M-%S)
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
-echo "script started and exicuted :$TIMESTAMP" & >> LOGFILE
+echo "script started and exicuted :$TIMESTAMP"  >> LOGFILE 2>&1
 
 VALIDATE (){
 if [ $1 -ne 0 ]
@@ -30,11 +30,11 @@ fi
    # echo "all arguments passed:$@"
 for PACKAGE in $@
 do 
-    yum list installed $PACKAGE & >> LOGFILE
+    yum list installed $PACKAGE >> LOGFILE 2>&1
 
     if [ $? -ne 0 ] 
     then 
-    yum install $PACKAGE -y & >> LOGFILE
+    yum install $PACKAGE -y >> LOGFILE 2>&1
     
     VALIDATE $? "installed $PACKAGE"
     else
