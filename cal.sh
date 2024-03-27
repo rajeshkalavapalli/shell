@@ -1,0 +1,8 @@
+#!/bin/bash
+
+NUM1=$1
+NUM2=$2
+
+RESULT=$((NUM1+NUM2))
+
+echo "SANVI ZOFIA YOU GIVEN ADDITION IS :$RESULT"
