@@ -13,9 +13,9 @@ validate(){
 
     if [ $1 -ne 0 ]
     then 
-        echo "$2.....$R failed $N "
+        echo -e "$2.....$R failed $N "
     else 
-        echo "$2 .....$G success $N "
+        echo -e "$2 .....$G success $N "
     fi 
 }
 
@@ -23,11 +23,11 @@ validate(){
 
 if [ $ID -ne 0 ]
 then 
-    echo "$R your not a root user $N"
-    echo "$Y please run this script with root user $N"
+    echo -e "$R your not a root user $N"
+    echo -e "$Y please run this script with root user $N"
     exit 1
 else 
-    echo "your a root user"
+    echo -e  " $G your a root user $N"
 fi
 
 yum install git -y &>> $LOGFILE
