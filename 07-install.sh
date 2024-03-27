@@ -11,11 +11,11 @@ else
     echo "error ::your a root user"
 fi
 
-yum install mysql  -y
+yum install mysqlds  -y
 
 if [ $? -ne 0 ]
 then 
-    echo "insalling my sql is faild "
+    echo "insalling mysql is faild "
 
 else 
     echo "insalling my sql is sucess "
