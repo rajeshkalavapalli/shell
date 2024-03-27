@@ -8,7 +8,7 @@ then
     echo "insalling $2 faild "
 
 else 
-    echo "insalling my $2  is sucess "
+    echo "insalling $2 is sucess "
 fi
 
 }
@@ -27,4 +27,4 @@ VALIDATE $? "installing mysql "
 
 yum install git  -y
 
-VALIDATE $? "installing git  "
+VALIDATE $? "installing git "
