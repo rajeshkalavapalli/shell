@@ -36,4 +36,6 @@ fi
         validate $?  "installed of $package"
     else
         echo -e  " $Y $package is allready installed $N"
+    fi
     done 
+    
