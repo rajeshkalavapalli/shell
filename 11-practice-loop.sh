@@ -36,5 +36,5 @@ then
     validate $?  "installing $package"
 else 
     echo "$Y $package installed .. skipping $N"
-done 
 fi 
+done 
