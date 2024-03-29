@@ -23,7 +23,5 @@ do
     echo "Password :$Password"
     echo "User ID (UID) :$User ID (UID)"
     echo "Group ID (GID) :$Group ID (GID)"
-
-
-
+    fi
 done <FILE
