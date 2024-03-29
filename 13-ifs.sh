@@ -23,5 +23,5 @@ do
     echo "Password :$Password"
     echo "User_ID  :$User_ID "
     echo "Group_ID :$Group_ID "
-    fi
+
 done <FILE
