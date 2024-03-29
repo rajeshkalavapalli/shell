@@ -17,11 +17,11 @@ else
 
 fi
 
-while IFS=":" read -r  Username Password  User ID (UID)  Group ID (GID)
+while IFS=":" read -r  Username Password  User_ID   Group_ID 
 do 
     echo "Username :$Username"
     echo "Password :$Password"
-    echo "User ID (UID) :$User ID (UID)"
-    echo "Group ID (GID) :$Group ID (GID)"
+    echo "User_ID  :$User_ID "
+    echo "Group_ID :$Group_ID "
     fi
 done <FILE
