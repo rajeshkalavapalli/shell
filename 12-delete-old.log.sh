@@ -7,7 +7,7 @@ N="\e[30m"
 
 SOURCE_DIR="/tmp/shellscript-logs"
 
-if [ ! -d  $SOURCE_DIR]
+if [ ! -d  $SOURCE_DIR ]
 then
     echo "source directory : $R $SOURCE_DIR does not exitst $N"
 else 
