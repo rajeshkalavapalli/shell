@@ -24,4 +24,4 @@ do
     echo "User_ID  :$User_ID "
     echo "Group_ID :$Group_ID "
 
-done <FILE
+done <$FILE
