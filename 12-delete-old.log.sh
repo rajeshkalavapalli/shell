@@ -9,9 +9,9 @@ SOURCE_DIR="/tmp/shellscript-logs"
 
 if [ ! -d  $SOURCE_DIR ]
 then
-    echo "source directory : $R $SOURCE_DIR does not exitst $N"
+    echo "source directory : $R ${SOURCE_DIR} does not exitst $N"
 else 
-    echo "source directory :$G $SOURCE_DIR  exitst $N"
+    echo "source directory :$G ${SOURCE_DIR}  exitst $N"
 
 fi
 
